@@ -7,19 +7,25 @@ public class App
     public static void main( String[] args )
     {
     /*
-    Task 3:
-    Exercise: Check Even or Odd
-    Objective: Write a Java program that asks the user to enter a number and then prints whether the number
-    is even or odd.
+    Task 4:
+    Exercise: Calculate the Sum of Input Numbers Objective: Write a Java program that continuously
+    asks the user to enter numbers until the user enters 0. After 0 is entered,
+    the program should print the sum of all entered numbers.
     */
-    Scanner scanner = new Scanner(System.in);
-    System.out.print("Enter a number: ");
-    int num = scanner.nextInt();
-    if (num % 2 == 0){
-        System.out.println(num + " is even.");
-    }
-    else {
-        System.out.println(num + " is odd.");
-    }
+        Scanner scanner = new Scanner(System.in);
+        boolean isNotZero = true;
+        int result = 0;
+        while (isNotZero){
+            System.out.print("Enter a number (or 0 to stop): ");
+            int num = scanner.nextInt();
+            if (num != 0){
+                result += num;
+            }
+            else{
+                isNotZero = false;
+            }
+        }
+        System.out.println("Sum of entered numbers: " + result);
+
     }
 }
